@@ -4,6 +4,13 @@ provider "aws" {
   secret_key = "SECRET_KEY"
 }
 
+variable "subnet_prefix" {
+  description = "cidr block for the subnet"
+  default = "10.0.66.0/24"
+  type = String
+}
+
+
 resource "aws_vpc" "prod-vpc" {
   cidr_block = "10.0.0.0/16"
 
@@ -36,7 +43,7 @@ resource "aws_route_table" "prod-route-table" {
 
 resource "aws_subnet" "subnet-1" {
     vpc_id = aws_vpc.prod-vpc.id
-    cidr_block = "10.0.1.0/24"
+    cidr_block = var.subnet_prefix
     availability_zone = "us-east-1a"
 
     tags = {

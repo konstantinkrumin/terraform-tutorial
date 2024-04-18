@@ -10,6 +10,9 @@ terraform apply
 // To apply a specific resource
 terraform apply -target [NAME OF THE INSTANCE TO APPLY]
 
+// To set a variable
+terraform apply -var "subnet_prefix=10.0.100.0/24"
+
 // To delete resources
 terraform destroy
 
