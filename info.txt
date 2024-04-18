@@ -7,11 +7,20 @@ terraform plan
 // To run code
 terraform apply
 
+// To apply a specific resource
+terraform apply -target [NAME OF THE INSTANCE TO APPLY]
+
 // To delete resources
 terraform destroy
+
+// To destroy a specific resource
+terraform destroy -target [NAME OF THE INSTANCE TO DESTROY]
 
 // To list resources in state
 terraform state list
 
 // To show details on a specific resource
-terraform state show [NAME_OF_THE_RESOURCE]
+terraform state show [NAME OF THE RESOURCE]
+
+// To refresh the state but without doing an apply / actual deploy
+terraform refresh
