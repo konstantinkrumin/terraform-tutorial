@@ -1,0 +1,17 @@
+// Initialize Terraform based on the config
+terraform init
+
+// Dry run the code
+terraform plan
+
+// To run code
+terraform apply
+
+// To delete resources
+terraform destroy
+
+// To list resources in state
+terraform state list
+
+// To show details on a specific resource
+terraform state show [NAME_OF_THE_RESOURCE]
